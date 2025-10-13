@@ -366,6 +366,12 @@
     height: 176px;
     margin-top: 48px;
     margin-right: 10px;
+    overflow: hidden;
+}
+
+.links-list li {
+    height: 25px;
+    line-height: 25px;
 }
 .links-list:last-child {
     margin-right: 0px;
