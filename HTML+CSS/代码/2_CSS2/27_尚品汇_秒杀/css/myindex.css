@@ -148,11 +148,11 @@
     left: 190px;
     top: 0;
     display: none;
+    transition: all 1s ease-in-out;
 }
 
 .main-content .classes li:hover .second-menu{
     display: block;
-    transition: all 0.5s ease-in-out;
     background-color: #fff;
 }
 
