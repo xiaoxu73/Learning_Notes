@@ -17,6 +17,12 @@
     let age = prompt('请输入您的年龄:')
     // 输出
     document.write(`大家好，我叫${uname}， 我今年贵庚${age}岁了`)
+
+    obj = { name: 'atguigu', age: 20 };
+    // 模版字符串放对象时会默认调用 toString 方法，而对象默认的 toString 方法返回的是 [object Object]
+    // 所以需要使用 JSON.stringify 方法将对象转换为字符串格式
+    console.log(`${obj}`)
+    console.log(`${JSON.stringify(obj)}`)
   </script>
 </body>
 
