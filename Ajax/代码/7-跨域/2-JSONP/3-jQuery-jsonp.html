@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery-jsonp</title>
+    <style>
+        #result{
+            width:300px;
+            height:100px;
+            border:solid 1px #089;
+        }
+    </style>
+    <script crossorigin="anonymous" src='https://code.jquery.com/jquery-3.7.1.js'></script>
+</head>
+<body>
+    <button>点击发送 jsonp 请求</button>
+    <div id="result">
+
+    </div>
+    <script>
+        obj = {name: 'atguigu', age: 20};
+        // 模版字符串放对象时会默认调用 toString 方法，而对象默认的 toString 方法返回的是 [object Object]
+        // 所以需要使用 JSON.stringify 方法将对象转换为字符串格式
+        console.log(`${obj}`)
+        console.log(`${JSON.stringify(obj)}`)
+
+        $('button').eq(0).click(function(){
+            $.getJSON('http://127.0.0.1:8000/jquery-jsonp-server?callback=?', function(data){
+                $('#result').html(`
+                    名称: ${data.name}<br>
+                    校区: ${data.city}
+                `)
+            });
+        });
+    </script>
+</body>
+</html>
