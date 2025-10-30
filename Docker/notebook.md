@@ -44,7 +44,7 @@ marp: true
 - [Docker REST API](#docker-rest-api)
   - [`Nginx`](#nginx)
   - [`MySQL`](#mysql)
-  - [`PostgreSQL`](#postgres)
+  - [`PostgreSQL`](#postgresql)
   - [`Redis`](#redis)
   - [`Elasticsearch`](#elasticsearch)
   - [`Gitlab`](#gitlab)
@@ -53,7 +53,7 @@ marp: true
   - [`Rancher`](#rancher)
   - [`Portainer`](#portainer)
   - [`Sourcegraph`](#sourcegraph)
-  - [`Mattermost`](#Mattermost)
+  - [`Mattermost`](#mattermost)
   - [`NPS`](#nps)
   - [`Penpot`](#penpot)
   - [`Navidrome`](#navidrome)
@@ -97,7 +97,7 @@ sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/cen
 
 可选：启用 `edge` 和 `test` 存储库。 这些存储库包含在上面的 `docker.repo` 文件中，但默认情况下处于禁用状态。您可以将它们与稳定存储库一起启用。
 
-```
+```bash
 $ sudo yum-config-manager --enable docker-ce-edge
 $ sudo yum-config-manager --enable docker-ce-test
 ```
@@ -331,7 +331,6 @@ $ docker image build -t koa-demo:0.0.1 .
 
 上面命令，`-t` 参数用来指定 `image` 文件的名字，后面还可以用冒号指定标签。如果不指定，默认的标签就是 `latest`。注意后面有个 `.`，表示 Dockerfile 文件所在的路径为当前路径
 
-
 ```bash
 docker run --name koa-demo-name --rm -d -p 9066:3000 koa-demo:latest
 # 或者
@@ -339,7 +338,6 @@ docker run --name koa-demo-name --rm -d -p 9066:3000 koa-demo:0.0.1
 ```
 
 上面命令，将刚创建的 `koa-demo` 景象跑起来，命令的 `--rm` 参数，在容器终止运行后自动删除容器文件。
-
 
 ### 发布自己的镜像
 
