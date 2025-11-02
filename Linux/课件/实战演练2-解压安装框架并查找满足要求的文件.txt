@@ -1,0 +1,23 @@
+下载最新的flume框架安装包tar.gz完成解压缩，放置到/opt/module目录下，查找超过1M的jar包有哪些。
+	(1) 下载对应的安装包https://mirrors.tuna.tsinghua.edu.cn/apache/flume/1.11.0/
+	(2) tar -zxvf apache-flume-1.11.0-bin.tar.gz apache-flume-1.11.0-bin ./
+	(3) find ./ -name  "*.jar" -size +1M
+	或者使用 find -size +1M | grep jar
+	
+	
+./lib/asynchbase-1.8.2.jar
+./lib/netty-3.9.4.Final.jar
+./lib/scala-library-2.13.9.jar
+./lib/scala-reflect-2.13.3.jar
+./lib/kafka_2.13-2.7.2.jar
+./lib/jackson-databind-2.13.2.1.jar
+./lib/zstd-jni-1.4.5-6.jar
+./lib/snappy-java-1.1.8.4.jar
+./lib/derby-10.14.2.0.jar
+./lib/zookeeper-3.6.2.jar
+./lib/tomcat-embed-core-8.5.46.jar
+./lib/kafka-clients-2.7.2.jar
+./lib/log4j-core-2.18.0.jar
+./lib/guava-11.0.2.jar
+./lib/curator-client-5.1.0.jar
+./tools/flume-ng-log4jappender-1.11.0-jar-with-dependencies.jar

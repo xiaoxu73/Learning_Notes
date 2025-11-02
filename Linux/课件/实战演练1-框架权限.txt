@@ -1,0 +1,25 @@
+1.在opt目录下创建嵌入式目录，用于安装嵌入式框架。所有者为嵌入式部门的领导张总，所属组为嵌入式部门，张总有全部的权限，部门其他开发有读和执行的权限，其他人只有读的权限。
+	(1) 创建张总账号 密码123456 赋予sudo权限
+	(2) 创建嵌入式组
+	(3) 创建小张账号 密码123456 添加到嵌入式组中
+	(4) 在opt目录下创建嵌入式工作目录 修改对应的所有者和所属组  张总:嵌入式
+	(5) 目录的权限比较特殊  读和执行的权限必须都有才能进入目录看有哪些文件   嵌入式目录权限等级 755 
+	(6) 修改工作文件所有者和所属组  张总:嵌入式   只有root权限才能去修改文件的所有者和所属组  即使是文件的所有者也不能修改
+	(7) 对应目录下的工作文件  754权限 
+	
+2.在opt目录下创建bigdata目录，用于大数据框架的安装。所有者为大数据部门的王总，所属组为bigdata部门，王总有全部的权限，部门其他人有读写执行权限，其他人没有权限。
+	(1) 创建王总账号 密码123456 赋予sudo权限  sudo adduser wangzong
+		sudo usermod -aG sudo wangzong
+	(2) 创建小王账号 密码123456 sudo adduser xiaowang
+	(3) 创建bigdata部门 sudo groupadd bigdata
+	(4) 添加小王到bigdata部门 sudo usermod -aG bigdata xiaowang
+	(5) 创建大数据部门工作目录  sudo mkdir bigdata
+	(6) 修改大数据部门工作目录的所有者和所属组  sudo chown wangzong:bigdata bigdata/
+	(7) 修改工作目录为对应的权限  chmod 770 bigdata
+	(8) 创建大数据部门可执行的文件  vim bigdata.txt
+	(9) 修改文件所有者和所属组  sudo chown wangzong:bigdata bigdata.txt
+	(10) 修改文件为对应的执行权限 sudo chmod 770 bigdata.txt
+
+	
+3.使用root用户在opt目录下创建mysql文件夹，用于安装mysql，赋予其他用户读的权限。
+4.使用root用户在opt目录下创建redis文件夹，用于安装使用redis，赋予其他用户读和执行的权限。
